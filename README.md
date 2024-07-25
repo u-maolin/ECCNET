@@ -45,64 +45,10 @@ This project uses deep learning techniques to predict extrachromosomal circular 
 To train the model, run:
 ```bash
 python train.py -ecc data/train/inputs/eccdna.bed -g data/genome/human/hg19/hg19.fa -o data/train/outputs -m my_model -e 10 -c data/genome/human/hg19/hg19.chrom.sizes -t extract --seed 42
-
 Prediction
 To predict new samples, run:
 
-python predict.py -ecc data/prediction/inputs/prediction.bed -g data/genome/human/hg19/hg19.fa -o data/prediction/outputs -m models/model/my_model/my_model.h5 -t circle
 
-
-好的，我们可以重新编写 README.md，重点描述训练、预测和可视化三部分的内容，并包含对一些关键参数的描述。同时，添加高级用法，如在全局环境中使用 ECCNET 一键进行训练或预测。
-
-生成 README.md 的内容
-plaintext
-复制代码
-# ECCNET: Deep Learning for eccDNA Prediction
-
-This project uses deep learning techniques to predict extrachromosomal circular DNA (eccDNA) from sequencing data.
-
-## Project Structure
-
-- **data**: Contains input data and processed data.
-- **models**: Contains trained models and model definition files.
-- **utils**: Contains utility scripts for data processing and visualization.
-- **train.py**: Main script for training the model.
-- **predict.py**: Main script for predicting new samples.
-- **requirements.txt**: Lists the required Python packages.
-- **README.md**: Provides project description, installation, and usage instructions.
-- **.gitignore**: Specifies files and directories to be ignored by Git.
-
-## Installation
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/your_username/eccnet.git
-    cd eccnet
-    ```
-
-2. Create a virtual environment:
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\\Scripts\\activate`
-    ```
-
-3. Install the required packages:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-## Usage
-
-### Training
-
-To train the model, run:
-```bash
-python train.py -ecc data/train/inputs/eccdna.bed -g data/genome/human/hg19/hg19.fa -o data/train/outputs -m my_model -e 10 -c data/genome/human/hg19/hg19.chrom.sizes -t extract --seed 42
-Prediction
-To predict new samples, run:
-
-bash
-复制代码
 python predict.py -ecc data/prediction/inputs/prediction.bed -g data/genome/human/hg19/hg19.fa -o data/prediction/outputs -m models/model/my_model/my_model.h5 -t 20bp
 Visualization
 To visualize the training results, run:
